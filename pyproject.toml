@@ -1,0 +1,15 @@
+[project]
+name = "hexlet-code"
+version = "0.1.0"
+authors = [
+    {name = "Alexander Evseev"},
+]
+description = '''\"Difference Calculator" is a program that determines the differences between two data structures.
+
+Utility features:
+
+Support for various input formats: YAML, JSON
+Report generation in plain text, stylish, and JSON formats'''
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
