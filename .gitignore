@@ -1,0 +1,42 @@
+# Виртуальные окружения uv и другие
+.venv/
+venv/
+env/
+
+# Lock‑файл uv: он генерируется автоматически, не нужно хранить в git
+uv.lock
+
+# Кэш Python и байт‑код
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Артефакты сборки (wheel, sdist и т. п.)
+dist/
+build/
+*.egg-info/
+
+# Кэши и результаты тестов
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Линтеры и форматировщики (если хранят кэш локально)
+.ruff_cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Локальные конфиги, которые не должны улетать в репозиторий
+.python-version
+
+# Docker и CI артефакты (если что-то создаётся локально)
+docker-compose.override.yml
+.env
