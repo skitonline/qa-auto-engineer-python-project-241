@@ -3,8 +3,6 @@ install:
 	uv sync
 
 build:
-	uv run ruff check --fix
-	uv run ruff format
 	uv build
 
 lint:

@@ -11,7 +11,7 @@ Utility features:
 Support for various input formats: YAML, JSON
 Report generation in plain text, stylish, and JSON formats'''
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = ["pyyaml>=6.0.3"]
 
 [build-system]

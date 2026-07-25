@@ -1,41 +1,25 @@
-import json
-from pathlib import Path
-
-import yaml
-
-PATH_1 = "assets/file1.json"
-PATH_2 = "assets/file2.json"
+from gendiff.diff_dict import to_diff_dict
+from gendiff.files_to_dict import files_to_dicts
+from gendiff.formaters.render_json import to_json
+from gendiff.formaters.render_plain import to_plain
+from gendiff.formaters.render_stylish import to_stylish
 
 
-def files_to_dict(path_1, path_2):
-    format = Path(path_1).suffix
+def generate_diff(path_1, path_2, format):
+    data_1, data_2 = files_to_dicts(path_1, path_2)
 
-    if format == ".json":
-        data_1 = json.load(open(path_1))
-        data_2 = json.load(open(path_2))
-    if format in (".yaml", ".yml"):
-        with open(path_1, "r", encoding="utf-8") as f:
-            data_1 = yaml.safe_load(f)
-        with open(path_2, "r", encoding="utf-8") as f:
-            data_2 = yaml.safe_load(f)
+    RENDERERS = {
+        "stylish": to_stylish,
+        "plain": to_plain,
+        "json": to_json,
+    }
+    render = RENDERERS.get(format)
 
-    return data_1, data_2
+    diff_dict = to_diff_dict(data_1, data_2)
+    all_data = sorted(data_1.keys() | data_2.keys())
+    
+    return render(all_data, diff_dict)
 
 
-def generate_diff(path_1=PATH_1, path_2=PATH_2, format="stylish"):
-    data_1, data_2 = files_to_dict(path_1, path_2)
 
-    all_data = sorted(set(data_1.keys()) | set(data_2.keys()))
-
-    result = []
-    for k in all_data:
-        if k in data_1.keys() and k in data_2.keys() and data_1[k] == data_2[k]:
-            result.append(f"    {k}: {json.dumps(data_1[k])}")
-        else:
-            if k in data_1:
-                result.append(f"  - {k}: {json.dumps(data_1[k])}")
-            if k in data_2:
-                result.append(f"  + {k}: {json.dumps(data_2[k])}")
-
-    result = "{\n" + "\n".join(result) + "\n}"
-    return result
+    
