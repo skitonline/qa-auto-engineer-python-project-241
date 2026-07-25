@@ -5,7 +5,7 @@ from gendiff.formaters.render_plain import to_plain
 from gendiff.formaters.render_stylish import to_stylish
 
 
-def generate_diff(path_1, path_2, format):
+def generate_diff(path_1, path_2, format='stylish'):
     data_1, data_2 = files_to_dicts(path_1, path_2)
 
     RENDERERS = {
