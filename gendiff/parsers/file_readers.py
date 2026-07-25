@@ -4,7 +4,7 @@ from pathlib import Path
 import yaml
 
 
-def files_to_dicts(path_1, path_2):
+def parse_files(path_1, path_2):
     format = Path(path_1).suffix
 
     if format == ".json":
