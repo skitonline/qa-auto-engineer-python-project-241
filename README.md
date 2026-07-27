@@ -60,3 +60,12 @@ make check
 ```bash
 make package-install
 ```
+
+### Demonstration stylish
+[![Demo](https://asciinema.org/a/8ElCmoMSM26HOyCq.svg)](https://asciinema.org/a/8ElCmoMSM26HOyCq)
+
+### Demonstration plain
+[![Demo](https://asciinema.org/a/NB0Mcnt0vUuXiDJU.svg)](https://asciinema.org/a/NB0Mcnt0vUuXiDJU)
+
+### Demonstration json
+[![Demo](https://asciinema.org/a/xBlpwkCZxxuRVWx6.svg)](https://asciinema.org/a/xBlpwkCZxxuRVWx6)
