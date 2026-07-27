@@ -1,8 +1,8 @@
-from gendiff.logic.diff_builder import to_diff_dict
-from gendiff.parsers.file_readers import parse_files
 from gendiff.formaters.render_json import to_json
 from gendiff.formaters.render_plain import to_plain
 from gendiff.formaters.render_stylish import to_stylish
+from gendiff.logic.diff_builder import to_diff_dict
+from gendiff.parsers.file_readers import parse_files
 
 
 def generate_diff(path_1, path_2, format='stylish'):
