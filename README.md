@@ -4,6 +4,8 @@
 ### My action status:
 [![My CI](https://github.com/skitonline/qa-auto-engineer-python-project-241/actions/workflows/my-check.yml/badge.svg)](https://github.com/skitonline/qa-auto-engineer-python-project-241/actions/workflows/my-check.yml)
 
+### Description:
+
 "Difference Calculator" is a program that determines the differences between two data structures.
 
 Utility features:

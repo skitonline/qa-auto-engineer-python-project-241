@@ -32,3 +32,5 @@ jobs:
             -Dsonar.projectKey=skitonline_qa-auto-engineer-python-project-241
             -Dsonar.organization=skitonline
             -Dsonar.python.coverage.reportPaths=coverage.xml
+            -Dsonar.sources=gendiff
+            -Dsonar.tests=tests
