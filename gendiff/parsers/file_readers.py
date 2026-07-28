@@ -15,7 +15,6 @@ def parse_files(path_1, path_2):
 
 
 def read_file(path, format):
-    print(format)
     if format == '.json':
         with open(path, 'r', encoding='utf-8') as f:
             return json.load(f)
