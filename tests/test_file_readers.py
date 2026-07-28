@@ -55,11 +55,10 @@ def test_wrong_format():
         parse_files(path_1, path_2)
 
 
-def test_different_formats():
+def test_different_formats(data_1, data_2):
     path_1 = 'tests/test_data/input/file1.yml'
-    path_2 = 'tests/test_data/input/file1.json'
-    with pytest.raises(ValueError):
-        parse_files(path_1, path_2)
+    path_2 = 'tests/test_data/input/file2.json'
+    assert parse_files(path_1, path_2) == (data_1, data_2)
 
 
 def test_empty_json(data_1):
